@@ -1,15 +1,8 @@
-Here's a **step-by-step README** for setting up an Ubuntu container with NGINX as a reverse proxy to a Node.js server running on `localhost:3000`:
+**Setup up an Ubuntu container with NGINX as a reverse proxy** to a Node.js server running on `localhost:3000`:
 
 ---
 
 # NGINX Reverse Proxy Setup in Docker Container
-
-This guide explains how to set up an **NGINX reverse proxy** inside an **Ubuntu Docker container** to forward requests from `localhost:8080` to a **Node.js server** running on `localhost:3000`.
-
-### **Prerequisites:**
-- **Docker** installed on your machine.
-- A **Node.js server** running on your **host machine** on port **3000**.
-- Basic knowledge of Docker, NGINX, and how to configure reverse proxies.
 
 ### **Step 1: Run Ubuntu Docker Container**
 
@@ -150,26 +143,6 @@ nginx -s reload
   ```bash
   nginx -s reload
   ```
-
----
-
-### **Additional Notes:**
-
-- If your **Node.js server** is running on a **different port** or on a different address, update the `proxy_pass` directive accordingly.
-- Make sure that the **Node.js server** is accessible to the Docker container. If you’re using `host.docker.internal`, it should work for Docker on macOS and Windows. For Linux, you might need to use `localhost` or the host IP address.
-
----
-
-### **Troubleshooting:**
-
-If you encounter a **502 Bad Gateway** or **"Cannot GET /proxy"** error:
-- Ensure the Node.js server is up and running on `localhost:3000`.
-- Check the NGINX logs for errors:  
-  ```bash
-  docker logs <nginx_container_name>
-  ```
-
-If the issue persists, feel free to reach out for further assistance.
 
 ---
 
