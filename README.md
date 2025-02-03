@@ -21,20 +21,26 @@ Some Nginx Commands:
   -nginx -s reload (reload after making any changes to conf file)
 
 Navigate to /etc/nginx directory and create a backup of the nginx.conf --> nginx-backup.conf (optional but good practice) and write your configurations in the nginx.conf:                                         
-events{ 
+events {}
 
+http {
+  server {
+    listen 80;
+    server_name _;
+
+    location / {
+      return 200 "Hello from nginx";
+    }
+
+    location /proxy {
+      proxy_pass http://host.docker.internal:3000;
+      proxy_set_header Host $host;
+      proxy_set_header X-Real-IP $remote_addr;
+      proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    }
+  }
 }
 
-http{ 
-        server{ 
-                listen 80;
-                server_name _;
-
-                location /{ 
-                        return 200 "Hello from nginx";
-                        }
-                }
-}
 
 Now reload nginx:
   -nginx -s reload
