@@ -1,6 +1,6 @@
 const express=require("express");
 const app=express();
-app.listent(3000,()=>{
+app.listen(3000,()=>{
     console.log("server is up and running!");
 })
 app.get("/",(req,res)=>{
