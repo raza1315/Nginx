@@ -1,0 +1,22 @@
+{
+  "name": "nginx",
+  "version": "1.0.0",
+  "description": "run an ubuntu container while exposing some port (8080:80) just for checking the installation of nginx thorugh your system localhost:80",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raza1315/Nginx.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/raza1315/Nginx/issues"
+  },
+  "homepage": "https://github.com/raza1315/Nginx#readme"
+}
