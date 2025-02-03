@@ -17,7 +17,25 @@ or simply nginx -v
 Some Nginx Commands:
   -systemctl stop nginx (stop nginx)
   -systemctl status nginx (show status)
+  -nginx -test (testing if everything is OK )
   -nginx -s reload (reload after making any changes to conf file)
 
-Navigate to /etc/nginx directory and create a backup of the nginx.conf --> nginx-backup.conf (optional but good practice) and write your configurations in the nginx.conf:
+Navigate to /etc/nginx directory and create a backup of the nginx.conf --> nginx-backup.conf (optional but good practice) and write your configurations in the nginx.conf:                                         
+events{ 
+
+}
+
+http{ 
+        server{ 
+                listen 80;
+                server_name _;
+
+                location /{ 
+                        return 200 "Hello from nginx";
+                        }
+                }
+}
+
+Now reload nginx:
+  -nginx -s reload
 
