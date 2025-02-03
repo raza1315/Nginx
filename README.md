@@ -27,13 +27,7 @@ http {
     server {
         listen 80;
         server_name _;
-
         location / {
-            return 200 "Hello from nginx";
-        }
-
-        # Forward the /proxy path without appending it to the backend URL
-        location /proxy/ {
             proxy_pass http://host.docker.internal:3000/;  # Ensure the trailing slash here
             proxy_set_header Host $host;
             proxy_set_header X-Real-IP $remote_addr;
