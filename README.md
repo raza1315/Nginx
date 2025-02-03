@@ -19,4 +19,5 @@ Some Nginx Commands:
   -systemctl status nginx (show status)
   -nginx -s reload (reload after making any changes to conf file)
 
-  
+Navigate to /etc/nginx directory and create a backup of the nginx.conf --> nginx-backup.conf (optional but good practice) and write your configurations in the nginx.conf:
+
