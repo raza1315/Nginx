@@ -12,6 +12,7 @@ Start the nginx service
   -nginx
 
 Check http://localhost:8080 for successful installation of nginx
+or simply nginx -v
 
 Some Nginx Commands:
   -systemctl stop nginx (stop nginx)
